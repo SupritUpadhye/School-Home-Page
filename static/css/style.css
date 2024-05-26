@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@600&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Handlee&display=swap');
+
+/* common css */
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+/* root colors and fonts */
+:root {
+    /* background color */
+    --bg-white: #fff;
+
+    /* text colors */
+    --primeary-text: #ffbf00;
+    --secondary-color: #0089D1;
+    --orange-color: #ffa500;
+    --yellow-color: #ffff00;
+    --light-color: #e2f6de;
+    --dark-color: #03262c;
+    --text-white: #fff;
+    --text-gray: #c3bebe;
+    --anchor-color: #007aff;
+
+    /* font Family */
+    --navbar-font: "Kanit", sans-serif;
+    --primary-font: "Roboto", sans-serif;
+    --anchor-font: "Montserrat", sans-serif;
+    --discount-font: "Merriweather", serif;
+    --footer-font: "Sedan SC", serif;
+}
+
+body,
+html {
+    color: var(--primeary-text);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+.main-btn {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--text-white);
+    font-family: var(--anchor-font);
+    font-weight: 700;
+    background-color: var(--orange-color);
+    border-radius: 2rem;
+    padding: 0.5rem 3rem;
+}
+
+.main-btn:hover {
+    background-color: var(--bg-white);
+    border: 1px solid var(--orange-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+
+h1 {
+    font-size: 8rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+h1 span {
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--orange-color);
+}
+
+h3 {
+    font-size: 3.1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--primeary-text);
+}
+
+h5 {
+    font-size: 1.8rem;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--primeary-text);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    font-family: var(--secondary-font);
+}
+
+embed,
+iframe,
+img,
+object {
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Anchor tags CSS */
+a,
+a:active,
+a:focus,
+a:hover,
+button {
+    text-decoration: none;
+    outline: 0;
+}
+
+li a {
+    color: var(--text-white);
+}
+
+a:hover,
+button:hover {
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #007aff);
+    border: 1px solid transparent;
+    background-clip: content-box;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #ffa500);
+}
+
+section {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+/* ================================================================================================================================================================= */
+/* Navbar CSS */
+.header {
+    font-family: var(--navbar-font);
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    left: 0;
+    z-index: 9999;
+}
+
+.header .navbar {
+    background: var(--bg-white);
+    padding: 0.6rem 5rem;
+    position: relative;
+}
+
+/* fixed navbar css */
+.header .navbar.scroll-on {
+    position: fixed;
+    top: -0.4rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    margin: auto;
+    z-index: 999;
+    background-color: #ffffff;
+    box-shadow: 0 0.8rem 1.3rem 0 #605e5ec0;
+    transition: all 0.15s ease-in-out 0s;
+}
+
+
+/* header navbar logo image css */
+.header .brand-logo {
+    width: 8rem;
+    margin-top: -0.1rem;
+    filter: drop-shadow(3px 3px 1px rgb(22, 22, 22));
+}
+
+
+/* header navbar links */
+.header .navbar-nav .nav-link {
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+}
+
+.header .navbar-nav .nav-item a {
+    font-size: 1.8rem;
+    font-weight: 400;
+    position: relative;
+    font-family: var(--navbar-font);
+    text-transform: capitalize;
+}
+
+.header .navbar-nav .nav-item a::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: all 0.5s;
+}
+
+.header .navbar-nav .nav-item a:hover::before,
+.header .navbar-nav .nav-item a.active::before {
+    color: var(--primeary-text);
+    width: 100%;
+}
+
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-link.active {
+    color: var(--primeary-text);
+}
+
+.header .dropdown-menu {
+    width: 30rem;
+    border-radius: 0 0 2rem 2rem;
+    padding: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.8rem 1.3rem 0 #1919199a;
+}
+
+.header .dropdown-menu a {
+    color: var(--secondary-color);
+    text-wrap: wrap;
+    text-align: justify;
+    transition: 0.3s;
+}
+
+.header .dropdown-menu a:hover {
+    color: var(--primeary-text);
+    background: var(--bg-white);
+}
+
+.header .contact-icon .nav-contact {
+    width: 7rem;
+}
+
+/* navbar-toggle for small screen */
+.header .navbar-toggler {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    height: 2.7rem;
+    padding: 0;
+}
+
+.header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.header .nav-contact {
+    cursor: pointer;
+}
+
+.header .nav-contact-card {
+    position: absolute;
+    top: 105%;
+    right: 5%;
+    width: 320px;
+    max-height: 0rem;
+    overflow: hidden;
+}
+
+.header .contact-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--primeary-text);
+}
+
+.social-icons img {
+    width: 3rem;
+    transition: 0.5s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 7px var(--orange-color));
+
+}
+
+.header .contact-content a {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-family: var(--anchor-font);
+    color: var(--anchor-color);
+}
+
+.header .contact-content i {
+    font-size: 2rem;
+    color: var(--anchor-color);
+    transition: 0.3s;
+}
+
+.header .contact-content i:hover,
+.header .contact-content a:hover {
+    color: var(--orange-color);
+}
+
+.header .contact-content {
+    letter-spacing: 1px;
+}
+
+
+/* ------------------------------------------------Hero/Banner Section CSS -------------------------------------------------------------------------- */
+.banner_section {
+    width: 100%;
+    height: 100%;
+    margin-top: 12rem;
+    top: 0;
+    padding: 0;
+}
+
+.banner_section .carousel-inner .carousel-item img {
+    z-index: 000;
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+/* banner text */
+.banner_section .carousel-caption {
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translate(-75%, -35%);
+    max-width: 1320px;
+}
+
+.banner_section .carousel-caption h2 {
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 7px 5px #00000093;
+}
+
+.banner_section .carousel-caption h1 {
+    text-shadow: 2px 7px 5px #000000ac;
+}
+
+/* -------------------------------------------------------Landing About Section-------------------------------------------------------------------------------- */
+
+.landing_about_section {
+    padding: 12rem 0;
+}
+
+.landing_about_section .container .row p {
+    color: var(--dark-color);
+    font-family: var(--secondary-font);
+    text-align: justify;
+    font-size: 1.6rem;
+}
+
+
+.landing_about_section .container .row h5 span {
+    color: var(--orange-color);
+    font-weight: 700;
+}
+
+.landing_about_section .container .row h3 {
+    color: var(--orange-color);
+    font-family: var(--secondary-font);
+    text-align: justify;
+}
+
+.landing_about_section .container img {
+    width: 30rem;
+}
+
+.landing_about_section .card {
+    margin-top: 7rem;
+    background: var(--bg-white);
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #007bff7d;
+    transition: 0.5s;
+    height: 25rem;
+}
+
+.landing_about_section .card:hover {
+    transform: translateY(1rem);
+    box-shadow: 0px 0px 20px var(--orange-color);
+}
+
+.landing_about_section .card .about-info .card-img-div {
+    height: 8rem;
+}
+
+.landing_about_section .card .about-info img {
+    width: 70px;
+}
+
+.landing_about_section .card .about-info p {
+    font-size: 1.8rem;
+    font-family: var(--primary-font);
+    font-weight: 700;
+    color: var(--anchor-color);
+}
+
+/* Banner Video section */
+
+.banner-video .span-video video {
+    border-radius: 2rem;
+    box-shadow: 0px 0px 20px rgb(65, 65, 65);
+}
+
+/* Programs section */
+
+.program {
+    margin: 0 1rem;
+    transition: 0.5s;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    height: 100%;
+    max-height: 40rem;
+    border-radius: 5rem 0 5rem 0;
+    overflow: hidden;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    box-shadow: 0px 0px 15px #ffa500;
+}
+
+.program:hover {
+    box-shadow: 0px 0px 30px #0089D1;
+}
+
+.programs-section .program .program-title h1 {
+    text-align: center;
+    color: #003267;
+}
+
+.programs-section .program .program-img {
+    overflow: hidden;
+}
+
+.programs-section .program .program-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5rem 0 5rem 0;
+    transition: 0.5s;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.program .program-img img:hover {
+    transform: scale(1.2);
+}
+
+.program .program-title {
+    height: 10rem;
+    padding: 2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.program .program-title p {
+    color: var(--dark-color);
+    font-size: 1.3rem;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    text-align: justify;
+}
+
+
+
+.program .program-title h1 {
+    color: var(--orange-color);
+    font-family: var(--special-font);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.program .program-title .btn {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.programs-section .prg-title h1{
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    text-decoration: underline 4px orange;
+
+}
+
+.programs-section .prg-desc p {
+    font-family: "Handlee", cursive;
+    color: var(--orange-color);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+/* Testimonial section css */
+
+.testimonial-area {
+	padding: 5rem 0;
+}
+.testimonial-area .container .carousel{
+    margin-top: 3rem;
+    width: 80%;
+    padding-bottom: 8rem;
+    background: var(--bg-white);
+    border-radius: 0 4rem 0rem 4rem;
+    box-shadow: 0px 0px 30px var(--orange-color);
+}
+
+.testimonial-area .container .carousel .quote-img-top{
+    top: -5rem;
+    left: -2rem;
+}
+.testimonial-area .container .carousel .quote-img-bottom{
+    bottom: -5rem;
+    right: -2rem;
+}
+
+.testimonial-area .container .carousel .quote-img-top img{
+    width: 15rem;
+    rotate: -200deg;
+}
+.testimonial-area .container .carousel .quote-img-bottom img{
+    width: 15rem;
+    rotate: -20deg;
+}
+
+.testimonial-area .section-header h1{
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-decoration: underline 4px orange;
+}
+.testimonial-area .section-header {
+	padding-bottom: 15px;
+}
+.testimonial-area .section-header h2 {
+    font-family: "Handlee", cursive;
+    color: var(--anchor-color);
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding-top: 2rem;
+}
+.testimonial-area .section-header p {
+    color: var(--dark-color);
+    font-size: 2rem;
+    font-weight: 600;
+	width: 40%;
+	margin: auto;
+    letter-spacing: 1px;
+}
+.testimonial-area .section-header p span{
+    color: var(--orange-color);
+}
+.testimonial-area .icon-area {
+	text-align: center;
+}
+
+.testimonial-area .content p {
+	color: var(--anchor-color);
+    font-family: "Handlee", cursive;
+    font-weight: 500;
+    font-size: 1.8rem;
+	width: 60%;
+	margin: auto;
+}
+.testimonial-area .person {
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin: auto;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid var(--anchor-color);
+    box-shadow: 5px 5px 10px rgb(70, 70, 70);
+	margin-top: 50px;
+}
+.testimonial-area .person img {
+	width: 100%;
+}
+.testimonial-area .content h5 {
+    font-family: var(--primary-font);
+    font-size: 1.6rem;
+    color: var(--dark-color);
+	font-weight: 600;
+    letter-spacing: 1px;
+	margin-top: 15px;
+}
+.testimonial-area .content h5 span{
+    color: var(--orange-color);
+}
+
+.testimonial-area .content h6{
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+    color: #00198a;
+	font-weight: 600;
+    letter-spacing: 1px;
+	margin-top: 10px;
+}
+
+.testimonial-area .carousel-indicators [data-bs-target] {
+	width: 60px;
+	height: 3px;
+	background-color: var(--dark-color);
+}
+
+/* ----------------------------------Principal message section--------------------------------------------------------- */
+
+
+.principal{
+    margin-top: 3rem;
+    width: 80%;
+    padding-bottom: 8rem;
+    background: var(--bg-white);
+    border-radius: 0 4rem 0rem 4rem;
+    box-shadow: 0px 0px 20px var(--secondary-color);
+}
+
+.principal-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--dark-color);
+    margin-right: 2rem;
+}
+
+.principalmsg-box h4{
+    font-size: 3rem;
+    font-weight: 600;
+}
+.principalmsg-box p{
+    color: var(--anchor-color);
+    font-family: "Handlee", cursive;
+    font-weight: 500;
+    font-size: 2rem;
+	margin: auto;
+    text-align: justify;
+    margin: 2rem 0; 
+}
+.principalmsg-box .name p{
+    font-family: var(--primary-font);
+    font-weight: 700;
+    width: 100%;
+    color: var(--dark-color);
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+/* ----------------------------contactform------------------------------------------ */
+
+.contact-form .container .cont-form-title h1{
+    text-transform: uppercase;
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-decoration: underline 4px orange;
+    color: #00198a;
+}
+
+.contact-form .container .sub-title-txt h2{
+    font-size: 2.8rem; 
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+
+.contact-form .container form{
+    font-family: var(--secondary-font);
+}
+
+.contact-form .container form input,
+.contact-form .container form textarea{
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 0.5 3rem;
+    color: var(--dark-color);
+}
+.contact-form .container form label,
+.contact-form .container form textarea label{
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 0.5 3rem;
+    color: var(--orange-color);
+}
+
+.contact-form .container form button{
+    outline: none;
+    border: none;
+}
+
+.contact-form .container form button:hover{
+    color:#00198a;
+    border: 1px solid var(--orange-color);
+}
+
+.counseller-contact h1{
+    text-transform: uppercase;
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-decoration: underline 4px orange;
+    color: #00198a;
+}

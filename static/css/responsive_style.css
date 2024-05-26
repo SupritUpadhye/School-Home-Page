@@ -1,0 +1,42 @@
+@media(max-width: 1200px) {
+    /* navbar css */
+    .header .navbar-nav {
+        margin-top: 1rem;
+    }
+    .header .navbar-nav .nav-link {
+        padding: 0.2rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .header .navbar-nav .nav-item a{
+        font-size: 1.5rem;
+    }
+    .header .header-right span {
+        padding: 0.25rem 0.5rem;
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.section-header p {
+		width: 85%;
+	}
+	.content p {
+		width: 95%;
+	}
+}
+@media (max-width: 767px) {
+	.testimonial-area {
+		padding: 30px 0;
+	}
+	.section-header p {
+		width: 95%;
+	}
+	.content p {
+		width: 100%;
+	}
+	.icon-area i {
+		font-size: 50px;
+	}
+}
